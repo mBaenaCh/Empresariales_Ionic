@@ -7,17 +7,19 @@ import { SearchService } from '../search.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  searchText: any = "";
+  search: any = "";
   items: any[] = [];
   constructor(private searchService: SearchService) { }
 
   generarItems(): void {
-    this.searchService.getItems(this.searchText).subscribe((data) => {
-      console.log(data);
+    this.searchService.getItems(this.search).subscribe((data) => {
+      //console.log(data);
       this.items = data.results;
-      console.log(this.items);
-
-      this.searchText = "";
+      //console.log(this.items);
+      this.searchService.setArray(this.items);
+      console.log(this.searchService.getArray());
+      this.search = "";
     });
+    
   }
 }

@@ -10,7 +10,7 @@ export class SearchService {
   baseURL = 'https://api.mercadolibre.com/sites/MCO/search?q=';
   URL = 'https://api.mercadolibre.com/items/';
   query : any;
-
+  array: any[] = [];
 
   constructor(private http: HttpClient) {}
   
@@ -25,4 +25,13 @@ export class SearchService {
     return this.http.get(`${this.URL}${query}`);
 
   }
+
+  getArray(){
+    return this.array;
+  }
+
+  setArray(data){
+    this.array = data;
+  }
+
 }

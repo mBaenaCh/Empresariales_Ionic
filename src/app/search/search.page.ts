@@ -9,11 +9,12 @@ import { SearchService } from '../search.service';
 })
 export class SearchPage implements OnInit {
 
-  items: any[] = [];
+  listedItems: any[] = [];  
   constructor(private searchService : SearchService) { }
 
   ngOnInit() {
-    
+    this.listedItems = this.searchService.getArray();
+    console.log(this.listedItems);
   }
 
 }

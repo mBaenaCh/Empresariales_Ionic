@@ -8,6 +8,8 @@ import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
 import { HttpClient } from '@angular/common/http';
+import { ListedItemComponent } from '../components/listed-item/listed-item.component';
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage],
+  declarations: [SearchPage, ListedItemComponent],
   providers: [HttpClient]
 })
 export class SearchPageModule {}
