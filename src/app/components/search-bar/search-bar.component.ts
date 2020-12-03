@@ -17,7 +17,7 @@ export class SearchBarComponent implements OnInit {
   generarItems():void{
     this.searchService.getItems(this.search).subscribe((data) => {
       console.log(data);
-      this.items = data.results;
+      this.items = data.items;
       console.log(this.items);
 
       this.search="";
