@@ -1,9 +1,16 @@
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
 .seller{
-    display: flex;
+    align-self: center;
+    align-content: center;
 }
 
 .icon{
     width: 100px;
+    align-self: center;
+    margin-left: 33%;
 }
 .font-text{
     font-size:15px;
@@ -14,7 +21,4 @@
    border-top: solid;
    border-bottom: solid;
    padding-bottom: 0;
-}
-.map{
-    width: 30px;
 }
