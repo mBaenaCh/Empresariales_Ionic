@@ -12,8 +12,11 @@ export class SearchService {
 
   baseURL = 'https://api.mercadolibre.com/sites/MCO/search?q=';
   URL = 'https://api.mercadolibre.com/items/';
+  
   baseURLdotCore='http://blackstorenetcore.eba-py2kgy33.us-east-1.elasticbeanstalk.com/api/search?q=';
+  baseURLdjango = 'http://development.eba-2veq4gdy.us-west-2.elasticbeanstalk.com/django_api/search/?q=';
   baseURLdotCoreitem='http://blackstorenetcore.eba-py2kgy33.us-east-1.elasticbeanstalk.com/api/item/';
+
   query : any;
   array: any[] = [];
   id: any;
@@ -23,6 +26,16 @@ export class SearchService {
   getItems(query): Observable<any> {
     console.log(`${this.baseURL}`+`${query}`);
     return this.http.get(`${this.baseURL}${query}`);
+  }
+
+  getItemsNetCore(query): Observable<any> {
+    console.log(`${this.baseURLdotCore}`+`${query}`);
+    return this.http.get(`${this.baseURLdotCore}${query}`);
+  }
+
+  getItemsDjango(query): Observable<any> {
+    console.log(`${this.baseURLdjango}`+`${query}`);
+    return this.http.get(`${this.baseURLdjango}${query}`);
   }
 
   getItemDetails( query:any): Observable<any> {
