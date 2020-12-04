@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
+import { SearchService } from '../services/search.service';
 
 
 @Component({
@@ -17,4 +17,8 @@ export class SearchPage implements OnInit {
     console.log(this.listedItems);
   }
 
+  sendItemId(id: String){
+    console.log(id);
+    return this.searchService.setId(id);
+  }
 }

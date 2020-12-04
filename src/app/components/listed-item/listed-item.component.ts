@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-listed-item',
@@ -6,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listed-item.component.scss'],
 })
 export class ListedItemComponent implements OnInit {
-
   
   constructor() { 
    
