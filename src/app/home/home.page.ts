@@ -12,16 +12,6 @@ export class HomePage {
   items: any[] = [];
   constructor(private searchService: SearchService, private router: Router) { }
 
-  generarItems(): void {
-    this.searchService.getItems(this.search).subscribe((data) => {
-      //console.log(data);
-      this.items = data.results;
-      //console.log(this.items);
-      this.searchService.setArray(this.items);
-      console.log(this.searchService.getArray());
-      this.search = "";
-      this.router.navigateByUrl('search');
-    });
+
     
-  }
 }

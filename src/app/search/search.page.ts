@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
+import {ChangeDetectorRef} from '@angular/core';
 
 
 @Component({
@@ -10,11 +11,20 @@ import { SearchService } from '../services/search.service';
 export class SearchPage implements OnInit {
 
   listedItems: any[] = [];  
-  constructor(private searchService : SearchService) { }
+  constructor(private searchService : SearchService, private ref: ChangeDetectorRef) {
+
+    
+  }
 
   ngOnInit() {
-    this.listedItems = this.searchService.getArray();
+    this.setListedItems(this.searchService.getArray());
     console.log(this.listedItems);
+    
+    this.ref.detectChanges();
+  }
+
+  setListedItems(data){
+    this.listedItems = data;
   }
 
   sendItemId(id: String){
