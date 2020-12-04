@@ -10,7 +10,7 @@
           <h2 color="tertiary">{{item.name}}</h2>
           <h2>{{item.brand}}</h2>
           <h3>{{item.price | currency:'COP':'symbol-narrow'}}</h3>
-          <ion-button shape="round" color="tertiary">Agregar al carrito</ion-button>
+          <ion-button shape="round" color="tertiary" (click)="addCar(item.name)">Agregar al carrito</ion-button>
         </ion-card-content>
       </ion-card>
       </div>

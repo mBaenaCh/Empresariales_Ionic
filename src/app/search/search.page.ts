@@ -1,3 +1,4 @@
+import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +16,10 @@ export class SearchPage implements OnInit {
   listedItems: any[] = [];
   vectorBusqueda:any[] = [];
   sellerId: string ="";
+
+  nameArray: String[] = [];
+  c: Number = 0; 
+
   constructor(private searchService: SearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -40,4 +45,10 @@ export class SearchPage implements OnInit {
     this.router.navigate(['/item-detail', id]);
     this.searchService.setSellerId(seller_id);
   }
+
+  addCar(name: String){
+    this.searchService.setItemCar(name);
+  }
+
+
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class SearchService {
   query : any;
   array: any[] = [];
   id: any;
+  counter: Number
+  name: String;
+  //private carrito = [];
+  //private carritoNroItems = new BehaviorSubject(0);
 
   constructor(private http: HttpClient) {}
   
@@ -63,4 +68,31 @@ export class SearchService {
   setSellerId(data){
     this.id = data;
   }
+
+  
+  setItemCar(name){
+    this.name = name;
+  }
+
+
+  getItemCar(){
+ return this.name;
+  }
+
+  /*agregarProducto(producto){
+      let agregado = false;
+      for(let p of this.carrito){
+        if(p.name === producto.name){
+          p.cantidad += 1;
+          agregado = true;
+          break;
+        }
+      }
+      if(!agregado){
+        this.carrito.push(producto);
+      }
+
+      this.carritoNroItems.next(this.carritoNroItems.value + 1);
+
+  }*/
 }
