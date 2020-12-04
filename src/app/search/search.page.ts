@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
-import {ChangeDetectorRef} from '@angular/core';
+
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,23 +10,20 @@ import {ChangeDetectorRef} from '@angular/core';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-
+  search:any;
   listedItems: any[] = [];  
-  constructor(private searchService : SearchService, private ref: ChangeDetectorRef) {
 
-    
-  }
+  constructor(private searchService : SearchService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.setListedItems(this.searchService.getArray());
-    console.log(this.listedItems);
-    
-    this.ref.detectChanges();
-  }
-
-  setListedItems(data){
-    this.listedItems = data;
-  }
+    this.route.params.subscribe(params =>{
+      this.search = params ['search'];
+    });
+    this.searchService.getItems(this.search).subscribe((data) => {
+      console.log(data);
+      this.listedItems= data.results;
+      console.log(this.listedItems);
+  });
 
   sendItemId(id: String){
     console.log(id);
