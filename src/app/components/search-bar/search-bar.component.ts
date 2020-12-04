@@ -3,6 +3,7 @@ import { SearchService } from 'src/app/services/search.service';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -18,6 +19,7 @@ export class SearchBarComponent implements OnInit {
 
   generarItems():void{
     this.searchService.getItems(this.search).subscribe((data) => {
+      //location.reload();
       console.log(data);
       this.items = data.results;
       console.log(this.items);
