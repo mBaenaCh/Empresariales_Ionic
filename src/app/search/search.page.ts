@@ -14,6 +14,7 @@ export class SearchPage implements OnInit {
   search: any;
   listedItems: any[] = [];
   vectorBusqueda:any[] = [];
+  sellerId: string ="";
   constructor(private searchService: SearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class SearchPage implements OnInit {
     this.searchService.getItemsNetCore(this.search).subscribe((data) => {
       console.log(data);
       this.vectorBusqueda = data.items;
+      this.sellerId = data.seller.id;
       this.listedItems.concat(this.vectorBusqueda);
       console.log(this.listedItems);
     });
