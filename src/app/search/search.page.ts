@@ -26,7 +26,8 @@ export class SearchPage implements OnInit {
     });
 
   }
-  sendItemId(id: String) {
+  sendItemId(id: String,seller_id:String) {
     this.router.navigate(['/item-detail', id]);
+    this.searchService.setSellerId(seller_id);
   }
 }
