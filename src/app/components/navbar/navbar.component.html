@@ -1,51 +1,21 @@
-<ion-header>
-  <ion-toolbar>
+<ion-toolbar class="toolbar">
+
     <div class="navbaricon">
-      <img src="../../../assets/icon/oldwave-logo.png" width="100px" />
+      <img (click)="homeLink()" src="../../../assets/icon/logo-oldwave-header.svg" width="100px" />
+    </div>   
+
+    <div class="menu-icon">
+      <ion-icon name="menu-outline"></ion-icon>
     </div>
 
+    <div class="login-icon">
+      <img src="../../../assets/icon/login-icon.svg" width="25px" />
+    </div>
 
-    <ion-buttons slot="end">
-      <ion-menu-button color="primary">
-        <div class="car-icon">
-          <ion-icon name="person-circle-outline"></ion-icon>
-        </div>
-      </ion-menu-button>
-      
-    </ion-buttons>
+    <div class="car-icon">
+      <img (click)="presentModal()" src="../../../assets/icon/carrito-icon.svg" width="25px" />
+    </div>
+    
+</ion-toolbar>
 
-    <ion-buttons slot="end">
-      <ion-menu-button color="primary" menu="carrito">
-        <div class="car-icon">
-          <ion-icon name="bag-handle-outline"></ion-icon>
-        </div>
-      </ion-menu-button>   
 
-    </ion-buttons>
-
-    <ion-buttons slot="start">
-      <ion-menu-button menu="primerMenu" class="menu"></ion-menu-button>
-    </ion-buttons>
-
-  </ion-toolbar>
-</ion-header>
-
-<ion-menu side="end" menuId="carrito" type="overlay" contentId="main">
-  <ion-header>
-    <ion-toolbar color="danger">
-      <ion-title></ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item>Producto 1</ion-item>
-      <ion-item>Producto 2</ion-item>
-      <ion-item>Producto 3</ion-item>
-      <ion-item>Producto 4</ion-item>
-      <ion-item>Producto 5</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
-<ion-menu side="start" menuId="primerMenu" type="overlay" contentId="main"></ion-menu>
-<!--<ion-menu side="start" menuId="login" type="push" contentId="main"></ion-menu>-->

@@ -2,16 +2,38 @@
     position: absolute;
     width: 100%;
     left: -20%;
-    bottom: 20%;
+    bottom: 35%;
     text-align:center;
+
 }
 
 .car-icon {
     position: absolute;
-    bottom: 16%;
+    bottom: 35%;
     color: #7444FB;
+    left: 90%;
+}
+
+.login-icon {
+    position: absolute;
+    bottom: 35%;
+    color: #7444FB;
+    left: 78%;
+}
+
+
+.menu-icon {
+    position: absolute;
+    bottom: 7%;
+    color: #7444FB;
+    left: 4%;
+    font-size: 30px;
 }
 
 .menu{
     color: #7444FB;
+}
+
+.toolbar{
+    height: 50px;
 }
