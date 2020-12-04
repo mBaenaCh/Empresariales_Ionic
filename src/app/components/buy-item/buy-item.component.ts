@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NetCoreService} from 'src/app/services/net-core.service'
+import { SearchService} from 'src/app/services/search.service'
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-item',
@@ -8,7 +10,8 @@ import {NetCoreService} from 'src/app/services/net-core.service'
 })
 export class BuyItemComponent implements OnInit {
 
-  id:string = "MCO574572313";
+  id:string;
+  id_seller:string;
   price:number;
   currency:string; 
   icons ={
@@ -17,13 +20,44 @@ export class BuyItemComponent implements OnInit {
     payments:"/assets/img/icon-multiples-medios-pago.svg"
 
   }
-  constructor(private netcore:NetCoreService) { }
+  constructor(private item:SearchService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.netcore.getItemId(this.id).subscribe((resp:any)=>{
-      this.price = resp.price;
-      this.currency = resp.currency;
-    })
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+    //id del vendedor obtenido desde el servicio
+    this.id_seller = this.item.getSellerId();
+    //comparacion de id del vendedor para comprobar que api consumir
+    // para los de .ner
+    if(this.id_seller=="BST13579ALV"){
+      this.item.getItemIdNetCore(this.id).subscribe((resp:any)=>{
+        this.price = resp.price;
+        this.currency = resp.currency;
+      })
+    }
+    //para los de node
+    else if(this.id_seller=="el de node si lo ponen"){
+      this.item.getItemIdNetCore(this.id).subscribe((resp:any)=>{
+        this.price = resp.price;
+        this.currency = resp.currency;
+      })
+    }
+    //para los de django 
+    else if(this.id_seller=="el de django si lo ponen"){
+      this.item.getItemIdNetCore(this.id).subscribe((resp:any)=>{
+        this.price = resp.price;
+        this.currency = resp.currency;
+      })
+    }
+    //esta seria de prueba con la de mercadolibre
+    else {
+      this.item.getItemDetails(this.id).subscribe((resp:any)=>{
+        this.price = resp.price;
+        this.currency = resp.currency;
+      })
+    }
+    
   }
 
 }

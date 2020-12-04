@@ -5,7 +5,7 @@
   <div class="container">
     <div *ngFor="let item of listedItems">
       <ion-card>
-        <img src={{item.thumbnail}} (click)="sendItemId(item.id)"/>
+        <img src={{item.thumbnail}} (click)="sendItemId(item.id,item.seller.id)"/>
         <ion-card-header>
           <ion-card-title>{{item.title}}</ion-card-title>
           <ion-card-subtitle>{{item.price | currency:'COP':'symbol-narrow'}}</ion-card-subtitle>
