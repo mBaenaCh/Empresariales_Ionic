@@ -1,0 +1,29 @@
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.img img{
+    width: 100%;
+    height: 200px;
+}
+.rating{
+    display: flex;
+}
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: orange;
+    font-size: 25px;
+    margin: 0;
+  }
+  .grey{
+    color: grey; 
+  }
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
