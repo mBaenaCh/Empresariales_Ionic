@@ -11,21 +11,22 @@ import { ItemDetailPage } from './item-detail.page';
 import {CarrouselItemComponent} from '../components/carrousel-item/carrousel-item.component'
 import {BuyItemComponent} from '../components/buy-item/buy-item.component'
 import {DescriptionItemComponent} from '../components/description-item/description-item.component'
-import {SearchBarComponent} from '../components/search-bar/search-bar.component';
+import { ComponentsModule } from '../components/components.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ItemDetailPageRoutingModule
+    ItemDetailPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [
     ItemDetailPage,
     CarrouselItemComponent,
     BuyItemComponent,
-    DescriptionItemComponent,
-    SearchBarComponent
+    DescriptionItemComponent
   ]
 })
 export class ItemDetailPageModule {}

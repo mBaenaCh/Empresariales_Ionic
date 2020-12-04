@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
+
 import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -10,7 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchPage implements OnInit {
   search:any;
   listedItems: any[] = [];  
-  constructor(private searchService : SearchService,private route: ActivatedRoute) { }
+
+  constructor(private searchService : SearchService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params =>{
@@ -20,12 +23,7 @@ export class SearchPage implements OnInit {
       console.log(data);
       this.listedItems= data.results;
       console.log(this.listedItems);
-      
-      
-   
   });
-    
-  }
 
   sendItemId(id: String){
     console.log(id);

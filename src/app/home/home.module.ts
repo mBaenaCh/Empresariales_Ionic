@@ -8,25 +8,25 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HttpClient } from '@angular/common/http';
 
-import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 
 //IMPORT HOME COMPONENTS
 import {CarruselHomeComponent} from '../components/carrusel-home/carrusel-home.component'
 import {CategoryHomeComponent} from '../components/category-home/category-home.component'
 import {ItemsHomeComponent} from '../components/items-home/items-home.component'
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ComponentsModule
   ],
 
   declarations: [HomePage, CarruselHomeComponent,
     CategoryHomeComponent,
-    ItemsHomeComponent,
-    SearchBarComponent],
+    ItemsHomeComponent],
   providers: [HttpClient]
 
 })
