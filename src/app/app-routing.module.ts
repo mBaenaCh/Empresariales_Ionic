@@ -19,7 +19,11 @@ const routes: Routes = [
     path: 'search/:search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
 
+  },  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+
 
 ];
 

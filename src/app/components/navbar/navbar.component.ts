@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalPage } from '../../modal/modal.page'
+import { ModalController } from '@ionic/angular'
+import { Router } from '@angular/router'
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController, private router: Router) { }
 
   ngOnInit() {}
 
-  toggleMenu(){
-    
+  async presentModal() {
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+    });
+    return await modal.present();
+  }
+
+  homeLink(){
+    this.router.navigate(['/home'] );
   }
 
 }
