@@ -5,8 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+
 import { HttpClient } from '@angular/common/http';
 
+import { SearchBarComponent } from '../components/search-bar/search-bar.component';
+
+//IMPORT HOME COMPONENTS
+import {CarruselHomeComponent} from '../components/carrusel-home/carrusel-home.component'
+import {CategoryHomeComponent} from '../components/category-home/category-home.component'
+import {ItemsHomeComponent} from '../components/items-home/items-home.component'
 
 @NgModule({
   imports: [
@@ -15,7 +22,12 @@ import { HttpClient } from '@angular/common/http';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage],
+
+  declarations: [HomePage, CarruselHomeComponent,
+    CategoryHomeComponent,
+    ItemsHomeComponent,
+    SearchBarComponent],
   providers: [HttpClient]
+
 })
 export class HomePageModule {}
