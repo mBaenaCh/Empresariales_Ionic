@@ -9,6 +9,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import { SearchPage } from './search.page';
 import { HttpClient } from '@angular/common/http';
 import { ListedItemComponent } from '../components/listed-item/listed-item.component';
+import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ListedItemComponent } from '../components/listed-item/listed-item.compo
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage, ListedItemComponent],
+  declarations: [SearchPage, ListedItemComponent, SearchBarComponent],
   providers: [HttpClient]
 })
 export class SearchPageModule {}

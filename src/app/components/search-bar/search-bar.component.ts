@@ -17,16 +17,9 @@ export class SearchBarComponent implements OnInit {
   ngOnInit() {}
 
   generarItems():void{
-    this.searchService.getItems(this.search).subscribe((data) => {
-      console.log(data);
-      this.items = data.results;
-      console.log(this.items);
-      this.searchService.setArray(this.items);
+      this.router.navigate(['/search', this.search] );
       this.search="";
       this.keyboard.hide();
-      this.router.navigateByUrl('search');
-  });
-
 }
 
 }
