@@ -13,6 +13,7 @@ export class SearchService {
   baseURL = 'https://api.mercadolibre.com/sites/MCO/search?q=';
   URL = 'https://api.mercadolibre.com/items/';
   baseURLdotCore='http://blackstorenetcore.eba-py2kgy33.us-east-1.elasticbeanstalk.com/api/search?q=';
+  uri='http://blackstorenetcore.eba-py2kgy33.us-east-1.elasticbeanstalk.com/api/item/';
   query : any;
   array: any[] = [];
   id: any;
@@ -38,11 +39,11 @@ export class SearchService {
     this.array = data;
   }
 
-  getId(){
-    return this.id;
-  }
-
   setId(data){
     this.id = data;
+  }
+  
+  getId(){
+    return this.id;
   }
 }

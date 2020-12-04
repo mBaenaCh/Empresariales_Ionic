@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NetCoreService} from 'src/app/services/net-core.service'
+import {SearchService} from 'src/app/services/search.service'
 
 @Component({
   selector: 'app-carrousel-item',
@@ -11,17 +12,20 @@ export class CarrouselItemComponent implements OnInit {
     initialSlide: 1,
     speed: 400
   };
-  id:string="MCO574572313"
+   id:string;
    name:string;
    rating:number;
    images: Array<any>=[];
-  constructor(private netCore:NetCoreService) { }
+  constructor(private netCore:NetCoreService, private searchService : SearchService) { }
 
   ngOnInit() {
-    this.netCore.getItemId(this.id).subscribe((resp:any)=>{
-      this.name = resp.name;
+    this.id = this.searchService.getId();
+    console.log(this.id);
+    this.searchService.getItemDetails(this.id).subscribe((resp:any)=>{
+      this.name = resp.title;
       this.images = resp.pictures;
       this.rating = resp.rating;
+      
     });
   }
 

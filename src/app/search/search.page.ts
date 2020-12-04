@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { SearchService } from '../services/search.service';
 export class SearchPage implements OnInit {
 
   listedItems: any[] = [];  
-  constructor(private searchService : SearchService) { }
+  constructor(private searchService : SearchService, private router: Router) { }
 
   ngOnInit() {
     this.listedItems = this.searchService.getArray();
@@ -19,6 +20,7 @@ export class SearchPage implements OnInit {
 
   sendItemId(id: String){
     console.log(id);
-    return this.searchService.setId(id);
+    this.searchService.setId(id);
+    this.router.navigateByUrl('item-detail');
   }
 }
