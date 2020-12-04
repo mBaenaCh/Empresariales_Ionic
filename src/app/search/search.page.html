@@ -1,0 +1,21 @@
+<ion-header>
+  <app-search-bar></app-search-bar>
+</ion-header>
+
+<ion-content>
+  <ion-button routerLink="/home">Regresar</ion-button>
+  <div class="container">
+    <div *ngFor="let item of listedItems">
+      <ion-card>
+        <img src={{item.thumbnail}} (click)="sendItemId(item.id)"/>
+        <ion-card-header>
+          <ion-card-title>{{item.title}}</ion-card-title>
+          <ion-card-subtitle>{{item.price | currency:'COP':'symbol-narrow'}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          test
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
