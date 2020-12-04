@@ -5,14 +5,13 @@
   <div class="container">
     <div *ngFor="let item of vectorBusqueda">
       <ion-card class="card-center">
-        <img class="img" src={{item.thumbnail}}/>
+        <img class="img" src={{item.thumbnail}} (click)="sendItemId(item.id, item.seller.id)/>
         <ion-card-content class="info">
           <h2 color="tertiary">{{item.name}}</h2>
           <h2>{{item.brand}}</h2>
           <h3>{{item.price | currency:'COP':'symbol-narrow'}}</h3>
-          <ion-button shape="round" color="tertiary" (click)="sendItemId(item.id)">Agregar al carrito</ion-button>
+          <ion-button shape="round" color="tertiary">Agregar al carrito</ion-button>
         </ion-card-content>
       </ion-card>
-    </div>
   </div>
 </ion-content>

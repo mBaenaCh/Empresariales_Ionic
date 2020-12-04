@@ -1,6 +1,6 @@
 <ion-content class="h-50">
   <div class="container" >
-   <ion-text class="text-left font-price font-weight-lighter mb-2">{{currency}}: ${{price}} </ion-text>
+   <ion-text class="text-left font-price font-weight-lighter mb-2">{{currency}}:{{price | currency:'COP':'symbol-narrow'}} </ion-text>
    <div class="insurance">
      <ion-img [src]="icons.insurance" class="icon mb-2"></ion-img>
      <ion-text class="font-text mt-2 ml-2">Compra protegida, sientete seguro.</ion-text>
