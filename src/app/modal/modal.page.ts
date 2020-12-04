@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular'
+import { SearchService } from '../services/search.service'
 
 @Component({
   selector: 'app-modal',
@@ -7,13 +8,19 @@ import { ModalController } from '@ionic/angular'
   styleUrls: ['./modal.page.scss'],
 })
 export class ModalPage implements OnInit {
-
-  constructor(private modalCtrl: ModalController) { }
+  name: String;
+  price: Number
+  constructor(private modalCtrl: ModalController, private searchService: SearchService) { }
 
   ngOnInit() {
+    
+    this.name = this.searchService.getItemCar();
   }
 
   dismiss(){
     this.modalCtrl.dismiss({ 'dismissed': true });
   }
+
+  
+
 }
