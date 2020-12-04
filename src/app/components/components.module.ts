@@ -6,10 +6,14 @@ import { IonicModule } from '@ionic/angular'
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 
-@NgModule({imports:[FormsModule,  CommonModule,
-           IonicModule], 
-           declarations: [SearchBarComponent, NavbarComponent], 
-           exports: [SearchBarComponent,  NavbarComponent]})
+@NgModule({imports:[FormsModule,  
+                    CommonModule,
+                    IonicModule], 
+           declarations: [SearchBarComponent, 
+                          NavbarComponent], 
+           exports: [SearchBarComponent, 
+                     NavbarComponent]
+         })
             
 
 export class ComponentsModule {}

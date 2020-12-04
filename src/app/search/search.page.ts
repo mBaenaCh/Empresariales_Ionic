@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,23 +10,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  search:any;
-  listedItems: any[] = [];  
+  search: any;
+  listedItems: any[] = [];
 
-  constructor(private searchService : SearchService, private route: ActivatedRoute) { }
+  constructor(private searchService: SearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params =>{
-      this.search = params ['search'];
+    this.route.params.subscribe(params => {
+      this.search = params['search'];
     });
     this.searchService.getItems(this.search).subscribe((data) => {
       console.log(data);
-      this.listedItems= data.results;
+      this.listedItems = data.results;
       console.log(this.listedItems);
-  });
+    });
 
-  sendItemId(id: String){
-    console.log(id);
-    return this.searchService.setId(id);
+  }
+  sendItemId(id: String) {
+    this.router.navigate(['/item-detail', id]);
   }
 }

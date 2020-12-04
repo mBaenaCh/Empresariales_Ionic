@@ -9,7 +9,6 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import { SearchPage } from './search.page';
 import { HttpClient } from '@angular/common/http';
 import { ListedItemComponent } from '../components/listed-item/listed-item.component';
-
 import { ComponentsModule } from '../components/components.module';
 
 

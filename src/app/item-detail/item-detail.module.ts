@@ -13,7 +13,6 @@ import {BuyItemComponent} from '../components/buy-item/buy-item.component'
 import {DescriptionItemComponent} from '../components/description-item/description-item.component'
 import { ComponentsModule } from '../components/components.module';
 
-
 @NgModule({
   imports: [
     CommonModule,
