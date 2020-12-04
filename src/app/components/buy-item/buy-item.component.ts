@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NetCoreService} from 'src/app/services/net-core.service'
+import { SearchService} from 'src/app/services/search.service'
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-item',
@@ -8,7 +10,7 @@ import {NetCoreService} from 'src/app/services/net-core.service'
 })
 export class BuyItemComponent implements OnInit {
 
-  id:string = "MCO574572313";
+  id:string;
   price:number;
   currency:string; 
   icons ={
@@ -17,10 +19,13 @@ export class BuyItemComponent implements OnInit {
     payments:"/assets/img/icon-multiples-medios-pago.svg"
 
   }
-  constructor(private netcore:NetCoreService) { }
+  constructor(private item:SearchService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.netcore.getItemId(this.id).subscribe((resp:any)=>{
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+    this.item.getItemDetails(this.id).subscribe((resp:any)=>{
       this.price = resp.price;
       this.currency = resp.currency;
     })

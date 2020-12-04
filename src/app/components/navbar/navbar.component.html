@@ -1,4 +1,4 @@
-
+<ion-header>
   <ion-toolbar>
     <div class="navbaricon">
       <img src="../../../assets/icon/oldwave-logo.png" width="100px" />
@@ -28,9 +28,9 @@
     </ion-buttons>
 
   </ion-toolbar>
+</ion-header>
 
-
-<ion-menu side="end" menuId="carrito" type="push" contentId="main">
+<ion-menu side="end" menuId="carrito" type="overlay" contentId="main">
   <ion-header>
     <ion-toolbar color="danger">
       <ion-title></ion-title>
@@ -47,7 +47,5 @@
   </ion-content>
 </ion-menu>
 
-<ion-menu side="start" menuId="primerMenu" type="push" contentId="main"></ion-menu>
+<ion-menu side="start" menuId="primerMenu" type="overlay" contentId="main"></ion-menu>
 <!--<ion-menu side="start" menuId="login" type="push" contentId="main"></ion-menu>-->
-
-<ion-router-outlet id="main"></ion-router-outlet>
