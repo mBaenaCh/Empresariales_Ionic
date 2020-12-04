@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../services/search.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { NetCoreService } from '../services/net-core.service';
+import { SearchService } from '../services/search.service';
 
 
 @Component({
@@ -12,18 +13,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchPage implements OnInit {
   search: any;
   listedItems: any[] = [];
-
+  vectorBusqueda:any[] = [];
   constructor(private searchService: SearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.search = params['search'];
     });
-    this.searchService.getItems(this.search).subscribe((data) => {
+    this.searchService.getItemsNetCore(this.search).subscribe((data) => {
       console.log(data);
-      this.listedItems = data.results;
+      this.vectorBusqueda = data.items;
+      this.listedItems.concat(this.vectorBusqueda);
       console.log(this.listedItems);
     });
+    /*this.searchService.getItemsDjango(this.search).subscribe((data) => {
+      console.log(data);
+      this.vectorBusqueda = data.items;
+      this.listedItems.concat(this.vectorBusqueda);
+      console.log(this.listedItems);
+    });*/
 
   }
   sendItemId(id: String) {
