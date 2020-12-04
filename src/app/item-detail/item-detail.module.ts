@@ -11,6 +11,7 @@ import { ItemDetailPage } from './item-detail.page';
 import {CarrouselItemComponent} from '../components/carrousel-item/carrousel-item.component'
 import {BuyItemComponent} from '../components/buy-item/buy-item.component'
 import {DescriptionItemComponent} from '../components/description-item/description-item.component'
+import {SearchBarComponent} from '../components/search-bar/search-bar.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {DescriptionItemComponent} from '../components/description-item/descripti
     ItemDetailPage,
     CarrouselItemComponent,
     BuyItemComponent,
-    DescriptionItemComponent
+    DescriptionItemComponent,
+    SearchBarComponent
   ]
 })
 export class ItemDetailPageModule {}
