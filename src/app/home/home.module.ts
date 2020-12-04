@@ -15,6 +15,7 @@ import {CategoryHomeComponent} from '../components/category-home/category-home.c
 import {ItemsHomeComponent} from '../components/items-home/items-home.component'
 import { ComponentsModule } from '../components/components.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
