@@ -1,7 +1,7 @@
 ion-card img {
-    width: 80%;
-    height: 80% !important;
-    background-color: #ffffff;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #ffffff !important;
 }
 
 .favCard{
@@ -17,8 +17,8 @@ ion-card img {
 
 .info{
     text-align: center;
-    width: 320px;
-    background-color: #f3f3f3;
+    width: 100%;
+    background-color: #ffffff !important;
 }
 
 .add_to_cart{
@@ -27,8 +27,14 @@ ion-card img {
 }
 
 .card-center{
-    width:80%; // adjust width on your ion-card suitable on your screen
+    width:100%; // adjust width on your ion-card suitable on your screen
     display:block;
     margin: 0 auto;
-    background-color: #e7e7e7;
+    background-color:  #ffffff !important;
+}
+
+.alert{
+    margin-top: 20%;
+    margin-left: 45%;
+    color: #7444FB;
 }

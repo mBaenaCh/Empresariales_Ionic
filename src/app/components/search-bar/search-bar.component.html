@@ -1,5 +1,6 @@
 <div color="primary" class="container">
-  <ion-searchbar show-cancel-button="focus" class="search" placeholder="Estoy buscando..." (keyup.enter)="generarItems()" [(ngModel)]="search" ngDefaultControl></ion-searchbar>
+  <ion-searchbar type="text" (keyup.enter)="generarItems()" [(ngModel)]="search"></ion-searchbar>
+
 </div>
 
 

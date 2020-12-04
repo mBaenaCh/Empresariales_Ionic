@@ -12,14 +12,21 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
   search:any;
+  search2:any;
   items: any[] = [];
   constructor(private searchService:SearchService, private keyboard:Keyboard, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.search="";
+  }
 
   generarItems():void{
-      this.router.navigate(['/search', this.search]);
+    console.log(this.search)
+
+    this.router.navigate(['/search', this.search]);
       this.keyboard.hide();
+      this.search="";
+
   }
 
 }

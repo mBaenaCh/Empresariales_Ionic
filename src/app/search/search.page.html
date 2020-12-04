@@ -1,8 +1,9 @@
 <ion-content idName="name">
   <app-navbar></app-navbar>
   <app-search-bar></app-search-bar>
-  <ion-button routerLink="/home">Regresar</ion-button>
+
   <div class="container">
+    <ion-spinner class="alert"*ngIf="this.vectorBusqueda.length==0">No se arrojaron resultados con esa busqueda</ion-spinner>
     <div *ngFor="let item of vectorBusqueda">
       <ion-card class="card-center">
         <img class="img" src={{item.thumbnail}} (click)="sendItemId(item.id, sellerId)"/>
