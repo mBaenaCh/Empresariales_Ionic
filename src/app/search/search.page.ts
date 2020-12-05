@@ -14,6 +14,8 @@ import { SearchService } from '../services/search.service';
 export class SearchPage implements OnInit {
   search: any;
   listedItems: any[] = [];
+  listedItems2: any[] = [];
+  listedItems3: any[] = [];
   vectorBusqueda:any[] = [];
   sellerId: string ="";
 
@@ -23,22 +25,24 @@ export class SearchPage implements OnInit {
   constructor(private searchService: SearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.listedItems3=[];
     this.route.params.subscribe(params => {
       this.search = params['search'];
     });
-    this.searchService.getItemsNetCore(this.search).subscribe((data) => {
+   this.searchService.getItemsNetCore(this.search).subscribe((data) => {
       console.log(data);
       this.vectorBusqueda = data.items;
       this.sellerId = data.seller.id;
-      this.listedItems.concat(this.vectorBusqueda);
-      console.log(this.listedItems);
+      this.listedItems2=this.vectorBusqueda.concat(this.listedItems);
+      console.log(this.vectorBusqueda);
+      console.log(this.listedItems2);
     });
-    /*this.searchService.getItemsDjango(this.search).subscribe((data) => {
+    this.searchService.getItemsDjango(this.search).subscribe((data) => {
       console.log(data);
       this.vectorBusqueda = data.items;
-      this.listedItems.concat(this.vectorBusqueda);
-      console.log(this.listedItems);
-    });*/
+      this.listedItems3=this.vectorBusqueda.concat(this.listedItems2);
+      console.log(this.listedItems3);
+    });
 
   }
   sendItemId(id: String,seller_id:String) {
@@ -48,6 +52,10 @@ export class SearchPage implements OnInit {
 
   addCar(name: String){
     this.searchService.setItemCar(name);
+  }
+  
+  homeLink(){
+    this.router.navigate(['/home'] );
   }
 
 

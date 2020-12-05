@@ -3,8 +3,8 @@
   <app-search-bar></app-search-bar>
 
   <div class="container">
-    <ion-spinner class="alert"*ngIf="this.vectorBusqueda.length==0">No se arrojaron resultados con esa busqueda</ion-spinner>
-    <div *ngFor="let item of vectorBusqueda">
+    <ion-spinner class="alert"*ngIf="this.listedItems3.length==0"></ion-spinner>
+    <div *ngFor="let item of listedItems3">
       <ion-card class="card-center">
         <img class="img" src={{item.thumbnail}} (click)="sendItemId(item.id, sellerId)"/>
         <ion-card-content class="info">
@@ -15,5 +15,7 @@
         </ion-card-content>
       </ion-card>
       </div>
+     <ion-icon name="return-up-back-outline"  *ngIf="this.listedItems3.length==0"  class="btnback" (click)="homeLink()"></ion-icon> 
+
   </div>
 </ion-content>
