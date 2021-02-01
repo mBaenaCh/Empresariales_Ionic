@@ -1,0 +1,46 @@
+ion-card img {
+    width: 50%;
+    margin-left: 25%;
+    background-color: #ffffff !important;
+}
+
+.favCard{
+    width: 320px;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    overflow: visible;
+}
+
+.info{
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff !important;
+}
+
+.add_to_cart{
+    margin-left: 45px;
+    margin-top: 10px; 
+}
+
+.card-center{
+    width:100%; // adjust width on your ion-card suitable on your screen
+    display:block;
+    margin: 0 auto;
+    background-color:  #ffffff !important;
+}
+
+.alert{
+    margin-top: 20%;
+    margin-left: 45%;
+    color: #7444FB;
+}
+.btnback{
+    background-color: #7444FB !important;
+    color: #ffffff;
+    margin-right: 30%;
+    margin-top: 20%;
+}
