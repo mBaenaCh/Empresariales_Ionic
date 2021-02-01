@@ -70,11 +70,7 @@ workflows:
                 # install dependencies and update to Cordova version 9
                 npm install
             - |
-                # Setup Cordova Android platform
-                ionic cordova platform remove android --nosave
-                ionic cordova platform add android --confirm --no-interactive --noresources
-            - |
                 # Build Android Cordova App
-                script: ionic cordova build android --debug --no-interactive --device
+                script: ionic cordova build android --prod
         artifacts:
             - platforms/android/app/build/outputs/**/*.apk
