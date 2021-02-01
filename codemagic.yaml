@@ -71,6 +71,6 @@ workflows:
                 npm install
             - |
                 # Build Android Cordova App
-                ionic cordova build android --prod
+                ionic cordova build android --debug --no-interactive --device
         artifacts:
             - platforms/android/app/build/outputs/**/*.apk
