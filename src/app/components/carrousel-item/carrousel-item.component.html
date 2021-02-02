@@ -90,6 +90,6 @@
   </div>
   <ion-slides pager="true" [options]="slideOpts" class="img">
     <ion-slide *ngFor="let imagen of images; let i = index">
-      <ion-img class="img-thumbnail" [src]="images[i]"></ion-img>
+      <ion-img class="img-thumbnail" [src]="images[i].url"></ion-img>
     </ion-slide>
   </ion-slides>

@@ -30,7 +30,7 @@ export class BuyItemComponent implements OnInit {
     this.id_seller = this.item.getSellerId();
     //comparacion de id del vendedor para comprobar que api consumir
     // para los de .ner
-    if(this.id_seller=="BST13579ALV"){
+   /* if(this.id_seller=="BST13579ALV"){
       this.item.getItemIdNetCore(this.id).subscribe((resp:any)=>{
         this.price = resp.price;
         this.currency = resp.currency;
@@ -49,14 +49,14 @@ export class BuyItemComponent implements OnInit {
         this.price = resp.price;
         this.currency = resp.currency;
       })
-    }
+    }*/
     //esta seria de prueba con la de mercadolibre
-    else {
+    //else {
       this.item.getItemDetails(this.id).subscribe((resp:any)=>{
         this.price = resp.price;
-        this.currency = resp.currency;
+        this.currency = resp.currency_id;
       })
-    }
+    //}
     
   }
 

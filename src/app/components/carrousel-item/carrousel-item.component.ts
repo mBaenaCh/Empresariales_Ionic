@@ -29,7 +29,7 @@ export class CarrouselItemComponent implements OnInit {
     console.log(this.id_seller);
     //comparacion de id del vendedor para comprobar que api consumir
     // para los de .ner
-    if(this.id_seller=="BST13579ALV"){
+    /*if(this.id_seller=="BST13579ALV"){
       this.item.getItemIdNetCore(this.id).subscribe((resp:any)=>{
         this.name = resp.name;
         this.images = resp.pictures;
@@ -51,15 +51,15 @@ export class CarrouselItemComponent implements OnInit {
         this.images = resp.pictures;
         this.rating = resp.rating;
       });
-    }
+    }*/
     //esta seria de prueba con la de mercadolibre
-    else {
+    //else {
       this.item.getItemDetails(this.id).subscribe((resp:any)=>{
-        this.name = resp.name;
+        this.name = resp.title;
         this.images = resp.pictures;
-        this.rating = resp.rating;
+        
       });
-    }
+    //}
   }
 
 
