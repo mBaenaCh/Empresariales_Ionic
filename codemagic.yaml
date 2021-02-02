@@ -71,7 +71,7 @@ workflows:
                 npm install
             - |
                 # Run local server
-                sleep 999999999 | ionic serve -b &
+                nohup ionic serve --no-open --no-livereload $> ionic.log &
             - |
                 # Run e2e tests
                 npm run cypress:run
