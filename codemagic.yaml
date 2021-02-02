@@ -71,7 +71,7 @@ workflows:
                 npm install
             - |
                 # Start the e2e tests
-               ionic serve
+               ionic serve & ls
                 npm run cypress:run
             - |
                 # Build Android Cordova App
