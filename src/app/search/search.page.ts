@@ -29,7 +29,11 @@ export class SearchPage implements OnInit {
     this.route.params.subscribe(params => {
       this.search = params['search'];
     });
-   this.searchService.getItemsNetCore(this.search).subscribe((data) => {
+
+    this.searchService.getItems(this.search).subscribe((data)=>{
+      this.vectorBusqueda = data.results;
+    })
+   /*this.searchService.getItemsNetCore(this.search).subscribe((data) => {
       console.log(data);
       this.vectorBusqueda = data.items;
       this.sellerId = data.seller.id;
@@ -42,7 +46,7 @@ export class SearchPage implements OnInit {
       this.vectorBusqueda = data.items;
       this.listedItems3=this.vectorBusqueda.concat(this.listedItems2);
       console.log(this.listedItems3);
-    });
+    });*/
 
   }
   sendItemId(id: String,seller_id:String) {

@@ -11,8 +11,8 @@ export class DescriptionItemComponent implements OnInit {
   id:string;
   id_seller:string;
   description:string;
-  city_name:string;
-  city_code:string;
+  available_quantity:string;
+  site_id:string;
   sellerName:string;
   logo:string;
   constructor(private item:SearchService,private route: ActivatedRoute, private router: Router) { }
@@ -22,6 +22,10 @@ export class DescriptionItemComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });
+
+
+
+    /*
     //id del vendedor obtenido desde el servicio
     this.id_seller = this.item.getSellerId();
     //comparacion de id del vendedor para comprobar que api consumir
@@ -54,16 +58,16 @@ export class DescriptionItemComponent implements OnInit {
       this.sellerName = resp.seller.name;
       this.logo = resp.seller.logo;
     })
-  }
-  else {
+  }*/
+  //else {
     this.item.getItemDetails(this.id).subscribe((resp:any)=>{
-      this.description = resp.description;
-      this.city_name = resp.city.name;
-      this.city_code = resp.city.code;
-      this.sellerName = resp.seller.name;
-      this.logo = resp.seller.logo;
+      //this.description = resp.description;
+      this.available_quantity = resp.available_quantity;
+      this.site_id = resp.site_id;
+      //this.sellerName = resp.seller.name;
+      //this.logo = resp.seller.logo;
     })
-  }
+  //}
   }
 
 }
