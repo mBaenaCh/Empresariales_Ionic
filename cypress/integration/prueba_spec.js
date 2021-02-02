@@ -1,12 +1,9 @@
-const { createPropertySignature } = require("typescript")
-
 describe('Searching test ', () => {
     it('Search for galaxy buds and look for the results', () => {
         //AAA PATERN
         cy.visit('/') //ARRAGE 
         cy.get('#search') // search bar class
             .type("galaxy buds {enter}")
-        //cy.wait(8000)
         cy.url().should('include','/search/galaxy%20buds')//ASSERT revisamos la uri que contenga lo que queremos
     })
     
@@ -25,3 +22,5 @@ describe('Searching test ', () => {
         cy.get('.dismiss').click()
     })
 })
+
+
