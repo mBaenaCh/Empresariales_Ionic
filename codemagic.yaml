@@ -70,12 +70,6 @@ workflows:
                 # install dependencies and update to Cordova version 9
                 npm install
             - |
-                # Run local server
-                npm run server
-            - |
-                # Run e2e tests
-                npm run cypress:run
-            - |
                 # Build Android Cordova App
                 ionic cordova build android --debug --no-interactive --device
         artifacts:
